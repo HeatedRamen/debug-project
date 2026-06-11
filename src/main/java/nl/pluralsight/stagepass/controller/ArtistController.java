@@ -2,6 +2,7 @@ package nl.pluralsight.stagepass.controller;
 
 import nl.pluralsight.stagepass.model.Artist;
 import nl.pluralsight.stagepass.service.ArtistService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,7 +33,12 @@ public class ArtistController {
     @PostMapping
     public ResponseEntity<Artist> createArtist(@RequestBody Artist artist) {
         Artist created = artistService.createArtist(artist);
-        return ResponseEntity.ok(created);
+
+        // Return the created
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+
+        // 200 response
+        // return ResponseEntity.ok(created);
     }
 
     @PutMapping("/{id}")

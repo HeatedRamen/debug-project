@@ -3,6 +3,7 @@ package nl.pluralsight.stagepass.controller;
 import jakarta.validation.Valid;
 import nl.pluralsight.stagepass.model.Booking;
 import nl.pluralsight.stagepass.service.BookingService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/bookings")
+@CrossOrigin(origins = "*")
 public class BookingController {
 
     private final BookingService bookingService;
@@ -38,14 +40,19 @@ public class BookingController {
     @PostMapping
     public ResponseEntity<Booking> createBooking(@RequestBody Booking booking) {
         Booking created = bookingService.createBooking(booking);
-        return ResponseEntity.ok(created);
+
+        // Return the created
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+
+        // 200 response
+        // return ResponseEntity.ok(created);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> cancelBooking(@PathVariable Long id) {
-        if (bookingService.cancelBooking(id)) {
-            return ResponseEntity.ok().build();
-        }
-        return ResponseEntity.notFound().build();
+
+            bookingService.cancelBooking(id);
+            return ResponseEntity.noContent().build();
+
     }
 }

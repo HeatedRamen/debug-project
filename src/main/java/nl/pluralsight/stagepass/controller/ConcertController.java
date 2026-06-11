@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import nl.pluralsight.stagepass.model.Concert;
 import nl.pluralsight.stagepass.service.BookingService;
 import nl.pluralsight.stagepass.service.ConcertService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,7 +37,12 @@ public class ConcertController {
     @PostMapping
     public ResponseEntity<Concert> createConcert(@RequestBody Concert concert) {
         Concert created = concertService.createConcert(concert);
-        return ResponseEntity.ok(created);
+
+        // Return the created
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+
+        // 200 response
+        //return ResponseEntity.ok(created);
     }
 
     @PutMapping("/{id}")
