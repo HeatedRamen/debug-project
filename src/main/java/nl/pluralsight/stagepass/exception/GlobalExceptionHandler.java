@@ -15,4 +15,10 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(Map.of("message", ex.getMessage()));
     }
+
+    @ExceptionHandler(InvalidIdException.class)
+    public ResponseEntity<Map<String, String>> handleIdOutOfBounds(InvalidIdException ex){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(Map.of("message", ex.getMessage()));
+    }
 }

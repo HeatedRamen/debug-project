@@ -1,9 +1,12 @@
 package nl.pluralsight.stagepass.service;
 
+import nl.pluralsight.stagepass.exception.InvalidIdException;
 import nl.pluralsight.stagepass.model.Concert;
+import nl.pluralsight.stagepass.model.ConcertSummary;
 import nl.pluralsight.stagepass.repository.ConcertRepository;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +28,9 @@ public class ConcertService {
         return concertRepository.findById(id);
     }
 
-    public List<Concert> getConcertsByArtist(Long artistId){ return concertRepository.findByArtistId(artistId); }
+    public List<Concert> getConcertsByArtist(Long artistId) {
+        return concertRepository.findByArtistId(artistId);
+    }
 
     public Concert createConcert(Concert concert) {
         return concertRepository.save(concert);
@@ -44,8 +49,22 @@ public class ConcertService {
         });
     }
 
-    public List<Concert> getUpcomingConcerts(){
+    public List<Concert> getUpcomingConcerts() {
         return concertRepository.findByDateAfterOrderByDateAsc(LocalDate.now());
+    }
+
+    public ConcertSummary summarizeConcert(Long id) {
+        Concert concert = concertRepository.findById(id)
+                .orElseThrow(() -> new InvalidIdException("Concert not found"));
+
+        int seatsBooked = concert.getTotalSeats() - concert.getAvailableSeats();
+
+        return new ConcertSummary(concert.getId(),
+                                  concert.getTitle(),
+                                  concert.getTotalSeats(),
+                                  concert.getAvailableSeats(),
+                                  seatsBooked,
+                                  concert.getTicketPrice().multiply(BigDecimal.valueOf(seatsBooked)));
     }
 
     public boolean deleteConcert(Long id) {

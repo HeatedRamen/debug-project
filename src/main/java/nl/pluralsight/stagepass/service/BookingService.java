@@ -48,7 +48,7 @@ public class BookingService {
                     booking.getNumberOfTickets()
                 )
             );
-        } else {
+        }
             // Compute total price
             booking.setTotalPrice(concert.getTicketPrice().multiply
                     (BigDecimal.valueOf(booking.getNumberOfTickets())));
@@ -61,7 +61,7 @@ public class BookingService {
             concert.setAvailableSeats(concert.getAvailableSeats() - booking.getNumberOfTickets());
 
             return bookingRepository.save(booking);
-        }
+
     }
 
     public boolean cancelBooking(Long id) {
