@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="646d3239-5138-433d-a037-942f2aa46939" name="Changes" comment="Remove application.properties from tracking and add to gitignore">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="646d3239-5138-433d-a037-942f2aa46939" name="Changes" comment="Add computation for total cost for booking">
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/service/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/StagepassApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/StagepassApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/ArtistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/ArtistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/BookingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/BookingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/ConcertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/ConcertController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/VenueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/VenueController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/exception/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/exception/InsufficientSeatsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/exception/InsufficientSeatsException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/model/Artist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/model/Artist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/model/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/model/Booking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/model/Concert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/model/Concert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/model/Venue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/model/Venue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/repository/BookingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/repository/BookingRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/ArtistService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/ArtistService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/BookingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/ConcertService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/ConcertService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/VenueService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/VenueService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781271942236</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add computation for total cost for booking">
+      <option name="closed" value="true" />
+      <created>1781272784037</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1781272784037</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +210,7 @@
     <MESSAGE value="Update available seats after making a booking" />
     <MESSAGE value="Change delete to send proper http code" />
     <MESSAGE value="Remove application.properties from tracking and add to gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove application.properties from tracking and add to gitignore" />
+    <MESSAGE value="Add computation for total cost for booking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add computation for total cost for booking" />
   </component>
 </project>
