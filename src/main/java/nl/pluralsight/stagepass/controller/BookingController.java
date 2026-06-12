@@ -1,6 +1,4 @@
 package nl.pluralsight.stagepass.controller;
-
-import jakarta.validation.Valid;
 import nl.pluralsight.stagepass.model.Booking;
 import nl.pluralsight.stagepass.service.BookingService;
 import org.springframework.http.HttpStatus;
@@ -11,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/bookings")
-@CrossOrigin(origins = "*")
 public class BookingController {
 
     private final BookingService bookingService;
@@ -52,7 +49,7 @@ public class BookingController {
     public ResponseEntity<Void> cancelBooking(@PathVariable Long id) {
 
             bookingService.cancelBooking(id);
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 
     }
 }

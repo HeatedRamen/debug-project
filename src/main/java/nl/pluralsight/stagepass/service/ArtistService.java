@@ -38,6 +38,7 @@ public class ArtistService {
     }
 
     public boolean deleteArtist(Long id) {
+
         if (artistRepository.existsById(id)) {
             artistRepository.deleteById(id);
             return true;

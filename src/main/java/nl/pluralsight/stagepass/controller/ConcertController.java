@@ -54,10 +54,9 @@ public class ConcertController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteConcert(@PathVariable Long id) {
-        if (concertService.deleteConcert(id)) {
-            return ResponseEntity.ok().build();
-        }
-        return ResponseEntity.notFound().build();
+
+        concertService.deleteConcert(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
 }

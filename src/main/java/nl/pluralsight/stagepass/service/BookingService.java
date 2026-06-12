@@ -1,6 +1,5 @@
 package nl.pluralsight.stagepass.service;
 
-import nl.pluralsight.stagepass.exception.InsufficientSeatsException;
 import nl.pluralsight.stagepass.model.Booking;
 import nl.pluralsight.stagepass.model.Concert;
 import nl.pluralsight.stagepass.repository.BookingRepository;
