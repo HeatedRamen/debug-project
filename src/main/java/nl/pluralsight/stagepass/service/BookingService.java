@@ -1,5 +1,6 @@
 package nl.pluralsight.stagepass.service;
 
+import nl.pluralsight.stagepass.exception.InsufficientSeatsException;
 import nl.pluralsight.stagepass.model.Booking;
 import nl.pluralsight.stagepass.model.Concert;
 import nl.pluralsight.stagepass.repository.BookingRepository;
@@ -40,18 +41,27 @@ public class BookingService {
         Concert concert = concertRepository.findById(booking.getConcert().getId())
                 .orElseThrow(() -> new RuntimeException("Concert not found"));
 
-        // Compute total price
-        booking.setTotalPrice(concert.getTicketPrice().multiply
-                             (BigDecimal.valueOf(booking.getNumberOfTickets())));
+        if (concert.getAvailableSeats() < booking.getNumberOfTickets()) {
+            throw new InsufficientSeatsException(String.format(
+                    "Not enough seats, only %d seats are available, but %d tickets were requested",
+                    concert.getAvailableSeats(),
+                    booking.getNumberOfTickets()
+                )
+            );
+        } else {
+            // Compute total price
+            booking.setTotalPrice(concert.getTicketPrice().multiply
+                    (BigDecimal.valueOf(booking.getNumberOfTickets())));
 
-        // Set booking date and concert reference
-        booking.setBookingDate(LocalDate.now());
-        booking.setConcert(concert);
+            // Set booking date and concert reference
+            booking.setBookingDate(LocalDate.now());
+            booking.setConcert(concert);
 
-        // Seat Decrement
-        concert.setAvailableSeats(concert.getAvailableSeats() - booking.getNumberOfTickets());
+            // Seat Decrement
+            concert.setAvailableSeats(concert.getAvailableSeats() - booking.getNumberOfTickets());
 
-        return bookingRepository.save(booking);
+            return bookingRepository.save(booking);
+        }
     }
 
     public boolean cancelBooking(Long id) {
