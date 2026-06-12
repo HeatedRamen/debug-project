@@ -1,4 +1,5 @@
 package nl.pluralsight.stagepass.controller;
+import jakarta.validation.Valid;
 import nl.pluralsight.stagepass.model.Booking;
 import nl.pluralsight.stagepass.service.BookingService;
 import org.springframework.http.HttpStatus;
@@ -35,7 +36,7 @@ public class BookingController {
     }
 
     @PostMapping
-    public ResponseEntity<Booking> createBooking(@RequestBody Booking booking) {
+    public ResponseEntity<Booking> createBooking(@Valid @RequestBody Booking booking) {
         Booking created = bookingService.createBooking(booking);
 
         // Return the created

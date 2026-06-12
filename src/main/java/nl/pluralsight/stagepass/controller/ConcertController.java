@@ -52,7 +52,7 @@ public class ConcertController {
     }
 
     @PostMapping
-    public ResponseEntity<Concert> createConcert(@RequestBody Concert concert) {
+    public ResponseEntity<Concert> createConcert( @Valid @RequestBody Concert concert) {
         Concert created = concertService.createConcert(concert);
 
         // Return the created
