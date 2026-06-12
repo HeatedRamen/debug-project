@@ -16,7 +16,7 @@ public class Concert {
     @NotBlank(message = "Concert name is required")
     private String title;
 
-    @NotBlank(message = "Date is required")
+    @NotNull(message = "Date is required")
     @FutureOrPresent (message = "Must be a valid date")
     private LocalDate date;
 
