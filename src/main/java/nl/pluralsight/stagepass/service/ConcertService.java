@@ -25,6 +25,8 @@ public class ConcertService {
         return concertRepository.findById(id);
     }
 
+    public List<Concert> getConcertsByArtist(Long artistId){ return concertRepository.findByArtistId(artistId); }
+
     public Concert createConcert(Concert concert) {
         return concertRepository.save(concert);
     }
@@ -40,6 +42,10 @@ public class ConcertService {
             existing.setTicketPrice(updatedConcert.getTicketPrice());
             return concertRepository.save(existing);
         });
+    }
+
+    public List<Concert> getUpcomingConcerts(){
+        return concertRepository.findByDateAfterOrderByDateAsc(LocalDate.now());
     }
 
     public boolean deleteConcert(Long id) {

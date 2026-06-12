@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="646d3239-5138-433d-a037-942f2aa46939" name="Changes" comment="Switch booking find by concert id to correct function from repository">
+    <list default="true" id="646d3239-5138-433d-a037-942f2aa46939" name="Changes" comment="Add feature to check if booking ticket is within concert available seats">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/service/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/service/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/BookingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/controller/ConcertController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/controller/ConcertController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/repository/ConcertRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/repository/ConcertRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/service/ConcertService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/pluralsight/stagepass/service/ConcertService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/ConcertController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/controller/ConcertController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/repository/ConcertRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/repository/ConcertRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/ConcertService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/pluralsight/stagepass/service/ConcertService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781273168955</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add feature to check if booking ticket is within concert available seats">
+      <option name="closed" value="true" />
+      <created>1781274997951</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1781274997951</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +234,7 @@
     <MESSAGE value="Remove application.properties from tracking and add to gitignore" />
     <MESSAGE value="Add computation for total cost for booking" />
     <MESSAGE value="Switch booking find by concert id to correct function from repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switch booking find by concert id to correct function from repository" />
+    <MESSAGE value="Add feature to check if booking ticket is within concert available seats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add feature to check if booking ticket is within concert available seats" />
   </component>
 </project>
